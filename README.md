@@ -21,23 +21,29 @@ A Discord bot that helps track expenses by storing them in a Google Sheet. The b
 
 ### 1. Discord Bot Setup
 
-1. Go to the [Discord Developer Portal](https://discord.com/developers/applications)
-2. Click "New Application" and give it a name
-3. Go to the "Bot" tab and click "Add Bot"
-4. Under the bot section, click "Reset Token" to get your bot token
-5. Enable the following bot permissions:
-   - `applications.commands`
-   - `bot` (with appropriate permissions for your server)
-6. Go to "OAuth2" → "URL Generator"
-   - Select `bot` and `applications.commands` scopes
-   - Select required permissions (at minimum: Send Messages, Use Slash Commands)
-7. Copy the generated URL and open it in your browser to add the bot to your server
-8. Note down your:
-   - Bot Token
-   - Server ID (Enable Developer Mode in Discord settings, right-click your server → Copy ID)
+1. Create a Discord Bot:
+   - Go to the [Discord Developer Portal](https://discord.com/developers/applications)
+   - Click "New Application" and give it a name
+   - Go to the "Bot" tab and click "Add Bot"
+   - Under the bot section, click "Reset Token" to get your bot token
+   - **Important**: Keep this token secure and never share it
+   - Enable "Message Content Intent" under Privileged Gateway Intents
+   - Enable "Server Members Intent" if you plan to use member-specific features
 
+2. Invite the Bot:
+   - Go to the "OAuth2" → "URL Generator" tab
+   - Select the following scopes:
+     - `bot`
+     - `applications.commands`
+   - Select the following bot permissions:
+     - Send Messages
+     - Use Slash Commands
+     - Read Message History
+   - Copy the generated URL and open it in your browser
+   - Select your server and authorize the bot
+   - Note down your Server ID (Enable Developer Mode in Discord settings, right-click your server → Copy ID)
 
-## 2 Google API Setup
+### 2. Google API Setup
 
 1. Create a Google Cloud Project:
    - Go to the [Google Cloud Console](https://console.cloud.google.com/)
